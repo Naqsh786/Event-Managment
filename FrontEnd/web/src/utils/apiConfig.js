@@ -42,7 +42,7 @@ const getApiBaseUrl = () => {
     }
 
     // 2. Agar variable nahi milta (Development mode), toh fallback URL:
-    return "https://chech1.vercel.app".replace(/\/$/, "");
+    return "https://event-managment-b.vercel.app".replace(/\/$/, "");
 };
 
 export const API_BASE_URL = getApiBaseUrl();
