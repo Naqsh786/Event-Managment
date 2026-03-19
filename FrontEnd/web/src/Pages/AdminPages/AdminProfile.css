@@ -1,0 +1,186 @@
+.admin-profile-container {
+    animation: fadeIn 0.4s ease-out;
+}
+
+.admin-profile-card {
+    background: linear-gradient(135deg, rgba(15, 15, 15, 0.95) 0%, rgba(5, 5, 5, 1) 100%);
+    padding: 50px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.1);
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    /* Geometric Skew */
+    transform: skewX(-2deg);
+    position: relative;
+    overflow: hidden;
+}
+
+.admin-profile-card>* {
+    transform: skewX(2deg);
+}
+
+.admin-profile-header {
+    background: linear-gradient(135deg, var(--bg-primary) 0%, #111 100%);
+    padding: 60px 40px;
+    text-align: center;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--accent-primary);
+}
+
+.admin-avatar-container {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    border: 4px solid var(--accent-primary);
+    background: var(--bg-primary);
+    overflow: hidden;
+    box-shadow: var(--shadow-premium);
+}
+
+.admin-profile-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.admin-initials-avatar {
+    width: 100%;
+    height: 100%;
+    background: var(--accent-primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+
+.admin-profile-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    text-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+}
+
+.admin-badge {
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--accent-primary);
+    padding: 6px 16px;
+    border-radius: 99px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.admin-profile-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 40px;
+    background: var(--bg-secondary);
+}
+
+.profile-info-section h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.info-row .label {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.info-row .value {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Make role text readable even if .value sets a light color */
+.info-row .value.badge-role {
+    background: #f1f5f9;
+    padding: 4px 12px;
+    border-radius: 6px;
+    color: #475569;
+}
+
+.verified-text {
+    color: #10b981;
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--accent-primary);
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--accent-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-profile-card {
+        padding: 30px 20px;
+        transform: none !important;
+    }
+
+    .admin-profile-card > * {
+        transform: none !important;
+    }
+
+    .admin-profile-header {
+        padding: 40px 20px;
+    }
+
+    .admin-avatar-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .admin-initials-avatar {
+        font-size: 2.5rem;
+    }
+
+    .admin-profile-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .admin-profile-content {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+        gap: 30px;
+    }
+}

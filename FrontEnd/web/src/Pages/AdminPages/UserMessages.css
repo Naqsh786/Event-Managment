@@ -1,0 +1,78 @@
+/* Reuse UserData.css styles for consistency */
+@import url("./UserData.css");
+
+.message-content {
+    max-width: 400px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Specific overrides for UserMessages if needed */
+.userdata-table td[data-label="Message"] {
+    min-width: 250px;
+}
+
+.message-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.approve-btn,
+.reject-btn {
+    padding: 10px 25px;
+    font-weight: 800;
+    cursor: pointer;
+    border: none;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /* Hexagonal Shape */
+    clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+}
+
+.approve-btn {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+}
+
+.approve-btn:hover {
+    background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+}
+
+.reject-btn {
+    background-color: #ef4444;
+    /* Red */
+    color: white;
+}
+
+.reject-btn:hover {
+    background-color: #dc2626;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .message-content {
+        max-width: none;
+        text-align: right;
+    }
+
+    .message-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .approve-btn,
+    .reject-btn {
+        width: 100%;
+        clip-path: none !important;
+        border-radius: 8px;
+        padding: 12px;
+    }
+}

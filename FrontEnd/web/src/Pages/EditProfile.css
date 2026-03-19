@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #050505;
+}
+
+/* ===== Container ===== */
+.edit-container {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px 50px;
+}
+
+/* ===== Card ===== */
+.edit-card {
+  background: linear-gradient(180deg, rgba(15, 15, 15, 0.9) 0%, rgba(5, 5, 5, 1) 100%);
+  padding: 50px 40px;
+  border: 2px solid var(--border-color);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.1);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  /* Geometric Skew */
+  transform: skewX(-3deg);
+  position: relative;
+  overflow: hidden;
+}
+
+.edit-card>* {
+  transform: skewX(3deg);
+}
+
+.edit-card h1 {
+  font-size: 2.2rem;
+  color: #fff;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, #fff 0%, var(--accent-primary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.edit-card p {
+  font-size: 1rem;
+  color: #cbd5e1;
+  margin-bottom: 25px;
+}
+
+/* ===== Form ===== */
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 8px;
+}
+
+.form-group label {
+  color: var(--accent-primary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-left: 4px;
+}
+
+.edit-form input,
+.edit-form select {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: #111111;
+  color: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.edit-form input:focus,
+.edit-form select:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+  background: #0a0a0a;
+}
+
+.edit-form select option {
+  background: #0f172a;
+  color: #e0f2fe;
+}
+
+.error {
+  color: #ef4444;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.edit-form button {
+  flex: 1;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.save-btn {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-gold-dark) 100%);
+  color: #000;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+  clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+}
+
+.save-btn:hover {
+  background: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-primary) 100%);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(212, 175, 55, 0.5), 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.cancel-btn {
+  background: transparent;
+  border: 1px solid #475569 !important;
+  color: #cbd5e1;
+}
+
+.cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: #cbd5e1 !important;
+  color: #fff;
+}
+
+/* ===== Responsive ===== */
+@media(max-width: 900px) {
+  .edit-container {
+    padding: 100px 15px 40px;
+  }
+
+  .edit-card {
+    padding: 30px 20px;
+    transform: none !important;
+  }
+
+  .edit-card > * {
+    transform: none !important;
+  }
+}
+
+@media(max-width: 480px) {
+  .edit-card h1 {
+    font-size: 1.7rem;
+  }
+
+  .edit-card p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .edit-form {
+    gap: 15px;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .save-btn {
+    clip-path: none !important;
+    border-radius: 8px;
+  }
+}

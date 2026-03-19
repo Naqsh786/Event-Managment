@@ -1,0 +1,71 @@
+.verify-container {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.verify-card {
+  background: var(--bg-secondary);
+  padding: 48px;
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.verify-card h1 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.verify-card p {
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+.verify-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.verify-form input {
+  padding: 14px 18px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.verify-form input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+.verify-form button {
+  background: var(--accent-primary);
+  color: white;
+  padding: 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.resend {
+  margin-top: 24px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.resend span {
+  color: var(--accent-primary);
+  cursor: pointer;
+  font-weight: 600;
+}

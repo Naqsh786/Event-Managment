@@ -1,0 +1,113 @@
+.custom-dropdown {
+    position: relative;
+    width: 200px;
+    /* Adjust as needed or make responsive */
+    font-family: inherit;
+}
+
+.dropdown-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    height: 44px;
+    /* Match Search Input Height */
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    /* Match Search Input Radius */
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    user-select: none;
+    color: #1e293b;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.dropdown-trigger:hover {
+    border-color: #cbd5e1;
+    background-color: #f8fafc;
+}
+
+.dropdown-trigger.open {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+    background-color: white;
+}
+
+.dropdown-text {
+    flex: 1;
+    margin-right: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dropdown-arrow {
+    color: #94a3b8;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-arrow.open {
+    transform: rotate(180deg);
+    color: var(--accent-primary);
+}
+
+/* Dropdown Menu Animation */
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    z-index: 50;
+    padding: 6px;
+
+    /* Animation Initial State */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) scale(0.98);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dropdown-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.dropdown-item {
+    padding: 10px 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    color: #334155;
+    font-size: 0.9rem;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f5f9;
+    color: #0f172a;
+}
+
+.dropdown-item.selected {
+    background-color: rgba(212, 175, 55, 0.1);
+    color: var(--accent-primary);
+    font-weight: 600;
+}
+
+.check-icon {
+    color: var(--accent-primary);
+}
+
+@media (max-width: 768px) {
+    .custom-dropdown {
+        width: 100%;
+    }
+}

@@ -1,0 +1,120 @@
+.verify-container {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.verify-card {
+  background: linear-gradient(180deg, rgba(15, 15, 15, 0.9) 0%, rgba(5, 5, 5, 1) 100%);
+  padding: 60px 50px;
+  border: 2px solid var(--border-color);
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.2);
+  /* Geometric Skew */
+  transform: skewY(-2deg);
+  position: relative;
+  overflow: hidden;
+}
+
+.verify-card>* {
+  transform: skewY(2deg);
+}
+
+.verify-card h1 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.verify-card p {
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+.verify-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.verify-form input {
+  padding: 14px 18px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  transition: var(--transition);
+  text-align: center;
+  letter-spacing: 4px;
+}
+
+.verify-form input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+.verify-form button {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-gold-dark) 100%);
+  color: #000;
+  padding: 18px;
+  font-weight: 800;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+  /* Hexagonal Shape */
+  clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+}
+
+.verify-form button:hover {
+  background: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-primary) 100%);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
+}
+
+.resend {
+  margin-top: 24px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.resend span {
+  color: var(--accent-primary);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.success {
+  color: var(--accent-primary);
+  background: rgba(16, 185, 129, 0.1);
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 600px) {
+  .verify-card {
+    padding: 30px 20px;
+    transform: none !important;
+  }
+
+  .verify-card > * {
+    transform: none !important;
+  }
+
+  .verify-form button {
+    clip-path: none !important;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+}

@@ -1,0 +1,229 @@
+.notifications-container {
+    padding: 40px 20px 40px; /* Reduced top padding */
+    min-height: 70vh;
+    background: var(--bg-primary);
+    display: flex;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.notifications-card {
+    width: 100%;
+    max-width: 950px;
+    background: var(--bg-secondary);
+    padding: 50px;
+    border-radius: 4px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(212, 175, 55, 0.1);
+    transform: skewX(-2deg);
+}
+
+.notifications-card>* {
+    transform: skewX(2deg);
+}
+
+.notifications-card h1 {
+    font-size: 2.8rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #fff 0%, var(--accent-primary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.notifications-card p {
+    color: #64748b;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+.notifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.notification-item {
+    padding: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    overflow: hidden;
+    /* Parallelogram Item */
+    transform: skewX(-3deg);
+}
+
+.notification-item>* {
+    transform: skewX(3deg);
+}
+
+.notification-item:hover {
+    transform: skewX(-3deg) translateX(10px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2), 0 0 20px rgba(212, 175, 55, 0.1);
+    border-color: var(--accent-primary);
+}
+
+.notification-item.approved {
+    border-left: 6px solid #10b981;
+}
+
+.notification-item.rejected {
+    border-left: 6px solid #ef4444;
+}
+
+.notification-item.pending {
+    border-left: 6px solid #f59e0b;
+}
+
+.notif-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.notif-date {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.status-badge {
+    padding: 6px 14px;
+    border-radius: 99px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.025em;
+}
+
+.status-badge.approved {
+    background: #ecfdf5;
+    color: #059669;
+    border: 1px solid #d1fae5;
+}
+
+.status-badge.rejected {
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fee2e2;
+}
+
+.status-badge.pending {
+    background: #fffbeb;
+    color: #d97706;
+    border: 1px solid #fef3c7;
+}
+
+.notif-body p {
+    margin: 8px 0;
+    font-size: 1rem;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.notif-feedback {
+    margin-top: 16px !important;
+    padding: 12px 16px;
+    background: rgba(212, 175, 55, 0.05);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.empty-notifications {
+    text-align: center;
+    padding: 80px 40px;
+}
+
+.empty-icon {
+    font-size: 4rem;
+    margin-bottom: 24px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.empty-notifications h3 {
+    font-size: 1.5rem;
+    color: var(--accent-primary);
+    margin-bottom: 12px;
+}
+
+.empty-notifications p {
+    margin-bottom: 0;
+}
+
+/* Loader Styles */
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #050505;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    border-bottom-color: var(--accent-primary);
+    border-radius: 50%;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .notifications-container {
+        padding: 100px 15px 40px;
+    }
+
+    .notifications-card {
+        padding: 30px 20px;
+        transform: none !important;
+    }
+
+    .notifications-card > * {
+        transform: none !important;
+    }
+
+    .notifications-card h1 {
+        font-size: 2rem;
+    }
+
+    .notification-item {
+        padding: 20px;
+        transform: none !important;
+    }
+
+    .notification-item > * {
+        transform: none !important;
+    }
+
+    .notification-item:hover {
+        transform: none !important;
+    }
+
+    .notif-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

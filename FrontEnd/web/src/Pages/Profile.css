@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap');
+
+.profile-container {
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px 50px; /* Reduced top padding */
+  background: var(--bg-primary);
+}
+
+.profile-card {
+  background: var(--bg-secondary);
+  padding: 50px;
+  border: 2px solid var(--border-color);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(212, 175, 55, 0.1);
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  /* Subtle Geometric Skew */
+  transform: skewX(-2deg);
+}
+
+.profile-card>* {
+  transform: skewX(2deg);
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  background: #111;
+  border: 3px solid var(--accent-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.25);
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.profile-img-circle {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profile-card h1 {
+  color: #fff;
+  font-size: 2.5rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, #fff 0%, var(--accent-primary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== Content Wrapper ===== */
+.profile-content {
+  display: flex;
+  width: 100%;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* ===== Table Section ===== */
+.profile-details {
+  flex: 1;
+}
+
+.profile-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  /* Parallelogram Table */
+  clip-path: polygon(2% 0, 100% 0, 98% 100%, 0 100%);
+}
+
+.profile-table td {
+  padding: 18px 25px;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.profile-table tr:last-child td {
+  border-bottom: none;
+}
+
+.profile-table td:first-child {
+  font-weight: 700;
+  color: var(--accent-primary);
+  width: 150px;
+  background: rgba(212, 175, 55, 0.05);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ===== Actions Section ===== */
+.profile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 220px;
+}
+
+/* Uniform Button Styles */
+.profile-actions button {
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+
+  /* Diamond / Hexagonal vibe for buttons */
+  clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-gold-dark) 100%);
+  color: #000;
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+.profile-actions button:hover {
+  background: linear-gradient(135deg, #fff 0%, var(--accent-primary) 100%);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(212, 175, 55, 0.5), 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.btn-delete {
+  background: linear-gradient(135deg, #ef4444 0%, #991b1b 100%) !important;
+  color: #fff !important;
+}
+
+.btn-delete:hover {
+  background: linear-gradient(135deg, #f87171 0%, #ef4444 100%) !important;
+  box-shadow: 0 15px 30px rgba(239, 68, 68, 0.4) !important;
+}
+
+/* Dropdown transition/animations from previous navbar (if applicable here? No this is profile page) */
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 100px 15px 40px;
+  }
+
+  .profile-card {
+    padding: 30px 20px;
+    transform: none !important;
+  }
+
+  .profile-card > * {
+    transform: none !important;
+  }
+
+  .profile-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .profile-details {
+    width: 100%;
+  }
+
+  .profile-table {
+    clip-path: none !important;
+  }
+
+  .profile-table td {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+
+  .profile-table td:first-child {
+    width: 100px;
+  }
+
+  .profile-actions {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .profile-actions button {
+    width: 100%;
+    padding: 14px;
+    clip-path: none !important;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+    font-size: 2.5rem;
+  }
+
+  .profile-card h1 {
+    font-size: 1.6rem;
+  }
+}

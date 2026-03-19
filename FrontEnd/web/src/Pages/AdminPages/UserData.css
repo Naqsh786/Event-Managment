@@ -1,0 +1,312 @@
+.userdata-container {
+    animation: fadeIn 0.4s ease-out;
+}
+
+
+
+.userdata-card {
+    background: var(--bg-secondary);
+    padding: 32px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--glow-primary);
+    border: 1px solid var(--border-color);
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.userdata-card h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--accent-primary);
+    margin-bottom: 8px;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.userdata-card p {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+
+.userdata-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.userdata-table th {
+    background-color: var(--bg-primary);
+    color: var(--accent-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    padding: 18px 16px;
+    border-bottom: 2px solid var(--border-color);
+    text-align: left;
+}
+
+.userdata-table td {
+    padding: 16px;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.95rem;
+}
+
+.userdata-table tr:hover {
+    background-color: rgba(212, 175, 55, 0.05);
+}
+
+.name-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.role-badge {
+    font-weight: 700;
+}
+
+.role-badge.admin-badge {
+    color: #059669 !important;
+    /* Green for Admin */
+}
+
+.role-badge.user-badge {
+    color: var(--accent-primary) !important;
+    /* Gold for Education roles */
+}
+
+.main-admin-tag {
+    background: var(--accent-primary);
+    color: #000;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid var(--accent-gold-dark);
+}
+
+.delete-row-btn {
+    background: var(--bg-primary);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.delete-row-btn:hover:not(:disabled) {
+    background: #fef2f2;
+    border-color: #fecaca;
+    transform: translateY(-1px);
+}
+
+.delete-row-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.action-btns-flex {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-start;
+}
+
+.approve-btn.small {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    background: #ecfdf5;
+    color: #059669;
+    border: 1px solid #d1fae5;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.approve-btn.small:hover {
+    background: rgba(16, 185, 129, 0.2);
+    border-color: #10b981;
+}
+
+/* Status Icons */
+.status-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.status-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+}
+
+.status-icon.verified {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.status-icon.unverified {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .userdata-container {
+        padding: 100px 15px 40px;
+    }
+
+    .userdata-table,
+    .userdata-table thead,
+    .userdata-table tbody,
+    .userdata-table th,
+    .userdata-table td,
+    .userdata-table tr {
+        display: block;
+    }
+
+    .userdata-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .userdata-table tr {
+        border-bottom: 2px solid var(--border-color);
+        margin-bottom: 20px;
+        background: var(--bg-primary);
+        border-radius: 12px;
+        padding: 10px;
+    }
+
+    .userdata-table td {
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        position: relative;
+        padding-left: 50% !important;
+        text-align: right;
+        font-size: 0.9rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        min-height: 50px;
+    }
+
+    .userdata-table td:last-child {
+        border-bottom: 0;
+    }
+
+    .userdata-table td:before {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: 700;
+        text-align: left;
+        content: attr(data-label);
+        color: var(--accent-primary);
+        text-transform: uppercase;
+        font-size: 0.75rem;
+    }
+
+    .name-wrapper {
+        justify-content: flex-end;
+    }
+
+    .header-flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .userdata-card {
+        padding: 20px 15px;
+    }
+
+    .userdata-card h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-badge.active {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.status-badge.inactive {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* Toggle Buttons */
+.status-toggle-btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.85rem;
+}
+
+.status-toggle-btn.deactivate-btn {
+    background: var(--bg-primary);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.status-toggle-btn.deactivate-btn:hover:not(:disabled) {
+    background: #fef2f2;
+    border-color: #fecaca;
+}
+
+.status-toggle-btn.activate-btn {
+    background: var(--bg-primary);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.status-toggle-btn.activate-btn:hover:not(:disabled) {
+    background: #ecfdf5;
+    border-color: #a7f3d0;
+}
+
+.status-toggle-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(1);
+}
