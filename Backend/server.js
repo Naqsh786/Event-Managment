@@ -1,3 +1,7 @@
+// Fix DNS resolution for MongoDB Atlas SRV records
+import dns from 'dns';
+dns.setServers(['8.8.8.8', '8.8.4.4']);
+
 import app from "./app.js";
 import { io } from './socket.js';
 import http from 'http';

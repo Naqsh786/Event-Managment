@@ -1,3 +1,7 @@
+// Fix DNS resolution for MongoDB Atlas SRV records (router DNS can't resolve SRV)
+import dns from "dns";
+dns.setServers(['8.8.8.8', '8.8.4.4']);
+
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 

@@ -26,6 +26,7 @@ export default function Navbar() {
   const unreadChatCount = useSelector(selectUnreadChatCount);
   const [unreadNotifyCount, setUnreadNotifyCount] = useState(0);
   const dropdownRef = useRef();
+  const categoryRef = useRef();
 
   useEffect(() => {
     dispatch(fetchCategories());
@@ -119,6 +120,9 @@ export default function Navbar() {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setUserMenuOpen(false);
       }
+      if (categoryRef.current && !categoryRef.current.contains(event.target)) {
+        setCategoryOpen(false);
+      }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -131,9 +135,7 @@ export default function Navbar() {
   };
 
   const handleCategoryClick = () => {
-    if (window.innerWidth <= 1100) {
-      setCategoryOpen(!categoryOpen);
-    }
+    setCategoryOpen(!categoryOpen);
   };
 
   return (
@@ -172,8 +174,7 @@ export default function Navbar() {
           <Link to='/' onClick={() => setMobileMenuOpen(false)}>Home</Link>
           <div 
             className="nav-item dropdown" 
-            onMouseEnter={() => window.innerWidth > 1100 && setCategoryOpen(true)} 
-            onMouseLeave={() => window.innerWidth > 1100 && setCategoryOpen(false)}
+            ref={categoryRef}
             onClick={handleCategoryClick}
           >
             <span className="dropdown-trigger">

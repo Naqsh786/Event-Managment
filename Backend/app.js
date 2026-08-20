@@ -66,7 +66,7 @@ app.use(async (req, res, next) => {
 const allowedOrigins = [
   "http://localhost:5173", 
   "http://localhost:3000",
-  "https://event-back-end-xi.vercel.app", // Backend itself
+  "https://event-managment-b.vercel.app/", // Backend itself
   // Add your frontend vercel URL and IP here
   process.env.FRONTEND_URL,
   process.env.ALLOWED_IP
