@@ -53,7 +53,7 @@ const services = [
   },
   {
     title: "Royal Nikah",
-    img: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80",
+    img: "https://images.unsplash.com/photo-1714321624458-c6f56b602b80?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     desc: "The sacred ceremony performed with traditional sanctity and beauty.",
     icon: "📜",
     features: [
